@@ -1,0 +1,1962 @@
+{
+  "cards": [
+    {
+      "id": "1",
+      "word": "COMPUTER",
+      "tabooWords": ["SCREEN", "KEYBOARD", "MOUSE", "TYPE", "LAPTOP"],
+      "category": "technology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "2",
+      "word": "PIZZA",
+      "tabooWords": ["CHEESE", "CRUST", "TOPPING", "ITALIAN", "DELIVERY"],
+      "category": "food",
+      "difficulty": "easy"
+    },
+    {
+      "id": "3",
+      "word": "ALGORITHM",
+      "tabooWords": ["COMPUTER", "CODE", "STEPS", "SOLVE", "PROGRAM"],
+      "category": "technology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "4",
+      "word": "PHOTOSYNTHESIS",
+      "tabooWords": ["PLANT", "SUN", "CHLOROPHYLL", "LIGHT", "OXYGEN"],
+      "category": "science",
+      "difficulty": "hard"
+    },
+    {
+      "id": "5",
+      "word": "INTERNET",
+      "tabooWords": ["WEB", "ONLINE", "NETWORK", "WIFI", "BROWSER"],
+      "category": "technology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "6",
+      "word": "BURGER",
+      "tabooWords": ["BUN", "MEAT", "LETTUCE", "CHEESE", "FAST FOOD"],
+      "category": "food",
+      "difficulty": "easy"
+    },
+    {
+      "id": "7",
+      "word": "QUANTUM",
+      "tabooWords": ["PHYSICS", "MECHANICS", "PARTICLE", "ATOM", "THEORY"],
+      "category": "science",
+      "difficulty": "hard"
+    },
+    {
+      "id": "8",
+      "word": "PYRAMID",
+      "tabooWords": ["EGYPT", "TRIANGLE", "ANCIENT", "SAND", "STRUCTURE"],
+      "category": "history",
+      "difficulty": "medium"
+    },
+    {
+      "id": "9",
+      "word": "GUITAR",
+      "tabooWords": ["STRINGS", "MUSIC", "INSTRUMENT", "PLAY", "ACOUSTIC"],
+      "category": "music",
+      "difficulty": "easy"
+    },
+    {
+      "id": "10",
+      "word": "VOLCANO",
+      "tabooWords": ["LAVA", "ERUPTION", "MAGMA", "ASH", "MOUNTAIN"],
+      "category": "geography",
+      "difficulty": "medium"
+    },
+    {
+      "id": "11",
+      "word": "UNICORN",
+      "tabooWords": ["HORN", "HORSE", "MYTHICAL", "RAINBOW", "FANTASY"],
+      "category": "mythology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "12",
+      "word": "OXYGEN",
+      "tabooWords": ["BREATH", "AIR", "GAS", "LIFE", "ELEMENT"],
+      "category": "science",
+      "difficulty": "easy"
+    },
+    {
+      "id": "13",
+      "word": "CHOCOLATE",
+      "tabooWords": ["SWEET", "BROWN", "CANDY", "DESSERT", "COCOA"],
+      "category": "food",
+      "difficulty": "easy"
+    },
+    {
+      "id": "14",
+      "word": "DRONE",
+      "tabooWords": ["FLY", "CAMERA", "REMOTE", "TECH", "ROBOT"],
+      "category": "technology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "15",
+      "word": "GALAXY",
+      "tabooWords": ["STARS", "SPACE", "MILKY WAY", "UNIVERSE", "PLANETS"],
+      "category": "astronomy",
+      "difficulty": "medium"
+    },
+    {
+      "id": "16",
+      "word": "BANJO",
+      "tabooWords": ["STRINGS", "MUSIC", "COUNTRY", "BLUEGRASS", "PLAY"],
+      "category": "music",
+      "difficulty": "medium"
+    },
+    {
+      "id": "17",
+      "word": "DINOSAUR",
+      "tabooWords": ["EXTINCT", "FOSSIL", "JURASSIC", "REPTILE", "T-REX"],
+      "category": "history",
+      "difficulty": "medium"
+    },
+    {
+      "id": "18",
+      "word": "PLANET",
+      "tabooWords": ["EARTH", "SPACE", "ORBIT", "SOLAR SYSTEM", "ROUND"],
+      "category": "astronomy",
+      "difficulty": "easy"
+    },
+    {
+      "id": "19",
+      "word": "SUSHI",
+      "tabooWords": ["RICE", "SEAWEED", "FISH", "ROLL", "JAPAN"],
+      "category": "food",
+      "difficulty": "medium"
+    },
+    {
+      "id": "20",
+      "word": "KALEIDOSCOPE",
+      "tabooWords": ["COLORS", "PATTERNS", "TUBE", "TURN", "REFLECT"],
+      "category": "art",
+      "difficulty": "hard"
+    },
+    {
+      "id": "21",
+      "word": "LIGHTNING",
+      "tabooWords": ["THUNDER", "STORM", "ELECTRICITY", "STRIKE", "SKY"],
+      "category": "nature",
+      "difficulty": "medium"
+    },
+    {
+      "id": "22",
+      "word": "MOSAIC",
+      "tabooWords": ["TILES", "ART", "PATTERN", "COLOR", "IMAGE"],
+      "category": "art",
+      "difficulty": "medium"
+    },
+    {
+      "id": "23",
+      "word": "MARATHON",
+      "tabooWords": ["RUNNING", "RACE", "LONG", "DISTANCE", "ENDURANCE"],
+      "category": "sports",
+      "difficulty": "medium"
+    },
+    {
+      "id": "24",
+      "word": "SAPPHIRE",
+      "tabooWords": ["GEM", "BLUE", "PRECIOUS", "STONE", "JEWELRY"],
+      "category": "jewelry",
+      "difficulty": "medium"
+    },
+    {
+      "id": "25",
+      "word": "ANDROID",
+      "tabooWords": ["ROBOT", "PHONE", "GOOGLE", "SYSTEM", "DEVICE"],
+      "category": "technology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "26",
+      "word": "TACO",
+      "tabooWords": ["MEXICAN", "SHELL", "BEEF", "LETTUCE", "CHEESE"],
+      "category": "food",
+      "difficulty": "easy"
+    },
+    {
+      "id": "27",
+      "word": "BIG BANG",
+      "tabooWords": ["UNIVERSE", "EXPLOSION", "SPACE", "BEGINNING", "COSMOLOGY"],
+      "category": "science",
+      "difficulty": "hard"
+    },
+    {
+      "id": "28",
+      "word": "CASTLE",
+      "tabooWords": ["FORTRESS", "KING", "QUEEN", "MEDIEVAL", "KNIGHT"],
+      "category": "history",
+      "difficulty": "medium"
+    },
+    {
+      "id": "29",
+      "word": "PIANO",
+      "tabooWords": ["KEYS", "INSTRUMENT", "MUSIC", "PLAY", "CLASSICAL"],
+      "category": "music",
+      "difficulty": "easy"
+    },
+    {
+      "id": "30",
+      "word": "CANYON",
+      "tabooWords": ["GRAND", "ROCK", "RIVER", "CLIFF", "NATURE"],
+      "category": "geography",
+      "difficulty": "medium"
+    },
+    {
+      "id": "31",
+      "word": "PEGASUS",
+      "tabooWords": ["WINGED", "HORSE", "MYTHICAL", "FLY", "GREEK"],
+      "category": "mythology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "32",
+      "word": "NEUTRON",
+      "tabooWords": ["ATOM", "PARTICLE", "NUCLEUS", "SCIENCE", "CHARGE"],
+      "category": "science",
+      "difficulty": "hard"
+    },
+    {
+      "id": "33",
+      "word": "ICE CREAM",
+      "tabooWords": ["COLD", "DESSERT", "SWEET", "FLAVOR", "CONE"],
+      "category": "food",
+      "difficulty": "easy"
+    },
+    {
+      "id": "34",
+      "word": "DRAGON",
+      "tabooWords": ["FIRE", "MYTHICAL", "FLY", "SCALES", "BEAST"],
+      "category": "mythology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "35",
+      "word": "ROCKET",
+      "tabooWords": ["SPACE", "NASA", "LAUNCH", "FUEL", "MOON"],
+      "category": "technology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "36",
+      "word": "OPERA",
+      "tabooWords": ["SINGING", "STAGE", "MUSIC", "CLASSICAL", "PERFORMANCE"],
+      "category": "music",
+      "difficulty": "medium"
+    },
+    {
+      "id": "37",
+      "word": "SAFARI",
+      "tabooWords": ["ANIMALS", "JUNGLE", "AFRICA", "WILDLIFE", "EXPLORE"],
+      "category": "geography",
+      "difficulty": "easy"
+    },
+    {
+      "id": "38",
+      "word": "HYDROGEN",
+      "tabooWords": ["WATER", "ELEMENT", "GAS", "ATOMIC", "SCIENCE"],
+      "category": "science",
+      "difficulty": "hard"
+    },
+    {
+      "id": "39",
+      "word": "OLYMPICS",
+      "tabooWords": ["SPORTS", "GAMES", "MEDAL", "COUNTRIES", "COMPETITION"],
+      "category": "sports",
+      "difficulty": "easy"
+    },
+    {
+      "id": "40",
+      "word": "EMERALD",
+      "tabooWords": ["GEM", "GREEN", "JEWEL", "PRECIOUS", "STONE"],
+      "category": "jewelry",
+      "difficulty": "medium"
+    },
+    {
+      "id": "41",
+      "word": "MONA LISA",
+      "tabooWords": ["PAINTING", "ART", "LEONARDO", "DA VINCI", "SMILE"],
+      "category": "art",
+      "difficulty": "medium"
+    },
+    {
+      "id": "42",
+      "word": "TORNADO",
+      "tabooWords": ["STORM", "WIND", "TWISTER", "CYCLONE", "DESTRUCTION"],
+      "category": "nature",
+      "difficulty": "medium"
+    },
+    {
+      "id": "43",
+      "word": "TRAMPOLINE",
+      "tabooWords": ["BOUNCE", "JUMP", "SPRING", "EXERCISE", "FUN"],
+      "category": "sports",
+      "difficulty": "easy"
+    },
+    {
+      "id": "44",
+      "word": "DIAMOND",
+      "tabooWords": ["GEM", "PRECIOUS", "STONE", "CUT", "JEWELRY"],
+      "category": "jewelry",
+      "difficulty": "easy"
+    },
+    {
+      "id": "45",
+      "word": "CAMOUFLAGE",
+      "tabooWords": ["HIDE", "BLEND", "NATURE", "DISGUISE", "ANIMALS"],
+      "category": "military",
+      "difficulty": "medium"
+    },
+    {
+      "id": "46",
+      "word": "BALLET",
+      "tabooWords": ["DANCE", "PERFORMANCE", "STAGE", "CLASSICAL", "TUTU"],
+      "category": "art",
+      "difficulty": "medium"
+    },
+    {
+      "id": "47",
+      "word": "VIKING",
+      "tabooWords": ["NORSE", "RAID", "LONGBOAT", "WARRIOR", "SCANDINAVIA"],
+      "category": "culture",
+      "difficulty": "medium"
+    },
+    {
+      "id": "48",
+      "word": "KANGAROO",
+      "tabooWords": ["AUSTRALIA", "POUCH", "HOP", "MARSUPIAL", "TAIL"],
+      "category": "animals",
+      "difficulty": "easy"
+    },
+    {
+      "id": "49",
+      "word": "SUNDIAL",
+      "tabooWords": ["TIME", "SHADOW", "SUN", "ANCIENT", "CLOCK"],
+      "category": "technology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "50",
+      "word": "PYTHAGORAS",
+      "tabooWords": ["TRIANGLE", "MATH", "THEOREM", "GEOMETRY", "GREEK"],
+      "category": "science",
+      "difficulty": "hard"
+    },
+    {
+      "id": "51",
+      "word": "CARNIVAL",
+      "tabooWords": ["FESTIVAL", "PARADE", "COSTUMES", "CELEBRATION", "MUSIC"],
+      "category": "culture",
+      "difficulty": "easy"
+    },
+    {
+      "id": "52",
+      "word": "CHESS",
+      "tabooWords": ["BOARD", "GAME", "PIECES", "STRATEGY", "CHECKMATE"],
+      "category": "games",
+      "difficulty": "medium"
+    },
+    {
+      "id": "53",
+      "word": "ZEPPELIN",
+      "tabooWords": ["AIRSHIP", "BLIMP", "FLY", "TRANSPORT", "HYDROGEN"],
+      "category": "transportation",
+      "difficulty": "hard"
+    },
+    {
+      "id": "54",
+      "word": "PIXEL",
+      "tabooWords": ["IMAGE", "SCREEN", "RESOLUTION", "DISPLAY", "GRAPHIC"],
+      "category": "technology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "55",
+      "word": "PRISM",
+      "tabooWords": ["LIGHT", "SPECTRUM", "RAINBOW", "REFRACTION", "GLASS"],
+      "category": "science",
+      "difficulty": "medium"
+    },
+    {
+      "id": "56",
+      "word": "BICYCLE",
+      "tabooWords": ["WHEELS", "PEDAL", "RIDE", "TRANSPORT", "GEARS"],
+      "category": "transportation",
+      "difficulty": "easy"
+    },
+    {
+      "id": "57",
+      "word": "TIGER",
+      "tabooWords": ["STRIPES", "CAT", "JUNGLE", "PREDATOR", "ORANGE"],
+      "category": "nature",
+      "difficulty": "easy"
+    },
+    {
+      "id": "58",
+      "word": "MICROSCOPE",
+      "tabooWords": ["LENS", "MAGNIFY", "SCIENCE", "SMALL", "VIEW"],
+      "category": "technology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "59",
+      "word": "PYRAMID",
+      "tabooWords": ["EGYPT", "STRUCTURE", "ANCIENT", "TRIANGLE", "TOMB"],
+      "category": "culture",
+      "difficulty": "medium"
+    },
+    {
+      "id": "60",
+      "word": "JAZZ",
+      "tabooWords": ["MUSIC", "SAXOPHONE", "IMPROVISATION", "BAND", "BLUES"],
+      "category": "art",
+      "difficulty": "medium"
+    },
+    {
+      "id": "61",
+      "word": "VACCINE",
+      "tabooWords": ["IMMUNITY", "DISEASE", "SHOT", "MEDICINE", "INJECTION"],
+      "category": "science",
+      "difficulty": "medium"
+    },
+    {
+      "id": "62",
+      "word": "MOUNTAIN",
+      "tabooWords": ["PEAK", "CLIMB", "HILL", "NATURE", "HIGH"],
+      "category": "nature",
+      "difficulty": "easy"
+    },
+    {
+      "id": "63",
+      "word": "CLOCK",
+      "tabooWords": ["TIME", "HOURS", "MINUTES", "SECOND", "TICK"],
+      "category": "technology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "64",
+      "word": "PAINTING",
+      "tabooWords": ["CANVAS", "ART", "BRUSH", "COLORS", "PICTURE"],
+      "category": "art",
+      "difficulty": "easy"
+    },
+    {
+      "id": "65",
+      "word": "FOOTBALL",
+      "tabooWords": ["SPORT", "BALL", "TEAM", "GOAL", "KICK"],
+      "category": "sports",
+      "difficulty": "easy"
+    },
+    {
+      "id": "66",
+      "word": "TORNADO",
+      "tabooWords": ["WIND", "STORM", "CYCLONE", "SPIN", "SKY"],
+      "category": "nature",
+      "difficulty": "medium"
+    },
+    {
+      "id": "67",
+      "word": "PYTHON",
+      "tabooWords": ["CODE", "PROGRAMMING", "LANGUAGE", "SCRIPT", "SNAKE"],
+      "category": "technology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "68",
+      "word": "FIREWORKS",
+      "tabooWords": ["EXPLOSION", "LIGHTS", "CELEBRATION", "NOISE", "SKY"],
+      "category": "culture",
+      "difficulty": "easy"
+    },
+    {
+      "id": "69",
+      "word": "OCEAN",
+      "tabooWords": ["SEA", "WATER", "WAVES", "BEACH", "BLUE"],
+      "category": "nature",
+      "difficulty": "easy"
+    },
+    {
+      "id": "70",
+      "word": "TENNIS",
+      "tabooWords": ["SPORT", "BALL", "RACKET", "COURT", "NET"],
+      "category": "sports",
+      "difficulty": "easy"
+    },
+    {
+      "id": "71",
+      "word": "ELECTRICITY",
+      "tabooWords": ["CURRENT", "POWER", "ENERGY", "WIRES", "PLUG"],
+      "category": "science",
+      "difficulty": "medium"
+    },
+    {
+      "id": "72",
+      "word": "FOSSIL",
+      "tabooWords": ["DINOSAUR", "BONES", "PALEONTOLOGY", "ROCK", "ANCIENT"],
+      "category": "science",
+      "difficulty": "hard"
+    },
+    {
+      "id": "73",
+      "word": "CARAVAN",
+      "tabooWords": ["TRAVEL", "TRAILER", "CAMPING", "ROAD", "MOBILE"],
+      "category": "culture",
+      "difficulty": "medium"
+    },
+    {
+      "id": "74",
+      "word": "SUNFLOWER",
+      "tabooWords": ["YELLOW", "PLANT", "SEEDS", "GROW", "NATURE"],
+      "category": "nature",
+      "difficulty": "easy"
+    },
+    {
+      "id": "75",
+      "word": "GUITAR",
+      "tabooWords": ["STRINGS", "MUSIC", "PLAY", "INSTRUMENT", "ACOUSTIC"],
+      "category": "art",
+      "difficulty": "easy"
+    },
+    {
+      "id": "76",
+      "word": "FIREPLACE",
+      "tabooWords": ["WOOD", "HEAT", "FLAME", "WINTER", "COZY"],
+      "category": "home",
+      "difficulty": "medium"
+    },
+    {
+      "id": "77",
+      "word": "LANTERN",
+      "tabooWords": ["LIGHT", "CANDLE", "CARRY", "GLOW", "NIGHT"],
+      "category": "home",
+      "difficulty": "medium"
+    },
+    {
+      "id": "78",
+      "word": "COWBOY",
+      "tabooWords": ["HORSE", "HAT", "WESTERN", "LASSO", "RANCH"],
+      "category": "culture",
+      "difficulty": "medium"
+    },
+    {
+      "id": "79",
+      "word": "MUSHROOM",
+      "tabooWords": ["FUNGUS", "PIZZA", "FOREST", "FOOD", "TOADSTOOL"],
+      "category": "nature",
+      "difficulty": "easy"
+    },
+    {
+      "id": "80",
+      "word": "KEYBOARD",
+      "tabooWords": ["COMPUTER", "TYPE", "BUTTONS", "INPUT", "MOUSE"],
+      "category": "technology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "81",
+      "word": "BLOSSOM",
+      "tabooWords": ["FLOWER", "TREE", "SPRING", "NATURE", "PETALS"],
+      "category": "nature",
+      "difficulty": "medium"
+    },
+    {
+      "id": "82",
+      "word": "GONDOLA",
+      "tabooWords": ["BOAT", "VENICE", "CANAL", "ITALY", "ROW"],
+      "category": "culture",
+      "difficulty": "medium"
+    },
+    {
+      "id": "83",
+      "word": "JIGSAW",
+      "tabooWords": ["PUZZLE", "PIECES", "GAME", "ASSEMBLE", "PICTURE"],
+      "category": "games",
+      "difficulty": "medium"
+    },
+    {
+      "id": "84",
+      "word": "GLACIER",
+      "tabooWords": ["ICE", "COLD", "MOUNTAIN", "MELT", "SNOW"],
+      "category": "nature",
+      "difficulty": "hard"
+    },
+    {
+      "id": "85",
+      "word": "MOLECULE",
+      "tabooWords": ["ATOM", "SCIENCE", "SMALL", "CHEMISTRY", "BONDS"],
+      "category": "science",
+      "difficulty": "hard"
+    },
+    {
+      "id": "86",
+      "word": "SANDCASTLE",
+      "tabooWords": ["BEACH", "BUCKET", "BUILD", "SAND", "WAVES"],
+      "category": "games",
+      "difficulty": "easy"
+    },
+    {
+      "id": "87",
+      "word": "SNEAKER",
+      "tabooWords": ["SHOE", "RUN", "FOOT", "ATHLETIC", "LACE"],
+      "category": "fashion",
+      "difficulty": "easy"
+    },
+    {
+      "id": "88",
+      "word": "BALLOON",
+      "tabooWords": ["AIR", "FLOAT", "PARTY", "POP", "HELIUM"],
+      "category": "culture",
+      "difficulty": "easy"
+    },
+    {
+      "id": "89",
+      "word": "FOSSIL",
+      "tabooWords": ["DINOSAUR", "BONES", "PALEONTOLOGY", "ROCK", "DISCOVERY"],
+      "category": "science",
+      "difficulty": "hard"
+    },
+    {
+      "id": "90",
+      "word": "WALRUS",
+      "tabooWords": ["ARCTIC", "TUSKS", "SEA", "ICE", "ANIMAL"],
+      "category": "nature",
+      "difficulty": "medium"
+    },
+    {
+      "id": "91",
+      "word": "RAINBOW",
+      "tabooWords": ["COLORS", "ARC", "SKY", "PRISM", "WATER"],
+      "category": "nature",
+      "difficulty": "easy"
+    },
+    {
+      "id": "92",
+      "word": "STATUE",
+      "tabooWords": ["SCULPTURE", "STONE", "MONUMENT", "FIGURE", "ART"],
+      "category": "art",
+      "difficulty": "medium"
+    },
+    {
+      "id": "93",
+      "word": "SEESAW",
+      "tabooWords": ["PLAYGROUND", "BALANCE", "UP", "DOWN", "TOYS"],
+      "category": "games",
+      "difficulty": "easy"
+    },
+    {
+      "id": "94",
+      "word": "ANCHOR",
+      "tabooWords": ["BOAT", "SHIP", "WATER", "HOLD", "STEADY"],
+      "category": "culture",
+      "difficulty": "medium"
+    },
+    {
+      "id": "95",
+      "word": "ECHO",
+      "tabooWords": ["SOUND", "REPEAT", "NOISE", "CAVE", "HEAR"],
+      "category": "nature",
+      "difficulty": "medium"
+    },
+    {
+      "id": "96",
+      "word": "LABYRINTH",
+      "tabooWords": ["MAZE", "WALLS", "PATH", "PUZZLE", "LOST"],
+      "category": "games",
+      "difficulty": "medium"
+    },
+    {
+      "id": "97",
+      "word": "PEARL",
+      "tabooWords": ["OYSTER", "JEWEL", "WHITE", "WATER", "ROUND"],
+      "category": "nature",
+      "difficulty": "easy"
+    },
+    {
+      "id": "98",
+      "word": "ASTEROID",
+      "tabooWords": ["SPACE", "ROCK", "PLANET", "BELT", "METEOR"],
+      "category": "science",
+      "difficulty": "medium"
+    },
+    {
+      "id": "99",
+      "word": "HELMET",
+      "tabooWords": ["HEAD", "PROTECT", "SAFETY", "WEAR", "BIKE"],
+      "category": "fashion",
+      "difficulty": "easy"
+    },
+    {
+      "id": "100",
+      "word": "CANDLE",
+      "tabooWords": ["WAX", "FLAME", "LIGHT", "MELT", "FIRE"],
+      "category": "home",
+      "difficulty": "easy"
+    },
+    {
+      "id": "101",
+      "word": "INCOME",
+      "tabooWords": [
+        "MONEY",
+        "SALARY",
+        "EARN",
+        "TAX",
+        "WORK"
+      ],
+      "category": "economy",
+      "difficulty": "medium"
+    },
+    {
+      "id": "102",
+      "word": "HEIGHT",
+      "tabooWords": [
+        "TALL",
+        "SHORT",
+        "MEASURE",
+        "GROWTH",
+        "MOUNTAIN"
+      ],
+      "category": "science",
+      "difficulty": "easy"
+    },
+    {
+      "id": "103",
+      "word": "STORY",
+      "tabooWords": [
+        "BOOK",
+        "PLOT",
+        "TALE",
+        "WRITE",
+        "CHARACTER"
+      ],
+      "category": "culture",
+      "difficulty": "easy"
+    },
+    {
+      "id": "104",
+      "word": "DISEASE",
+      "tabooWords": [
+        "SICK",
+        "ILLNESS",
+        "VIRUS",
+        "CURE",
+        "SYMPTOM"
+      ],
+      "category": "health",
+      "difficulty": "medium"
+    },
+    {
+      "id": "105",
+      "word": "CLASSROOM",
+      "tabooWords": [
+        "TEACHER",
+        "STUDENTS",
+        "LEARN",
+        "DESK",
+        "SCHOOL"
+      ],
+      "category": "culture",
+      "difficulty": "easy"
+    },
+    {
+      "id": "106",
+      "word": "AIRPORT",
+      "tabooWords": [
+        "PLANE",
+        "FLY",
+        "TRAVEL",
+        "TERMINAL",
+        "CHECK-IN"
+      ],
+      "category": "technology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "107",
+      "word": "SINGER",
+      "tabooWords": [
+        "VOICE",
+        "SONG",
+        "MUSIC",
+        "PERFORM",
+        "STAGE"
+      ],
+      "category": "culture",
+      "difficulty": "medium"
+    },
+    {
+      "id": "108",
+      "word": "FOOD",
+      "tabooWords": [
+        "EAT",
+        "COOK",
+        "TASTE",
+        "MEAL",
+        "FRUIT"
+      ],
+      "category": "food",
+      "difficulty": "easy"
+    },
+    {
+      "id": "109",
+      "word": "TRADITION",
+      "tabooWords": [
+        "CULTURE",
+        "CELEBRATION",
+        "HABIT",
+        "FESTIVAL",
+        "HISTORY"
+      ],
+      "category": "culture",
+      "difficulty": "medium"
+    },
+    {
+      "id": "110",
+      "word": "DISK",
+      "tabooWords": [
+        "ROUND",
+        "STORAGE",
+        "COMPUTER",
+        "CD",
+        "DATA"
+      ],
+      "category": "technology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "111",
+      "word": "TRUTH",
+      "tabooWords": [
+        "HONEST",
+        "FACT",
+        "REALITY",
+        "LIE",
+        "PROOF"
+      ],
+      "category": "philosophy",
+      "difficulty": "hard"
+    },
+    {
+      "id": "112",
+      "word": "VILLAGE",
+      "tabooWords": [
+        "TOWN",
+        "SMALL",
+        "COUNTRYSIDE",
+        "PEOPLE",
+        "COMMUNITY"
+      ],
+      "category": "geography",
+      "difficulty": "easy"
+    },
+    {
+      "id": "113",
+      "word": "MENU",
+      "tabooWords": [
+        "FOOD",
+        "RESTAURANT",
+        "ORDER",
+        "CHOICE",
+        "DRINK"
+      ],
+      "category": "food",
+      "difficulty": "easy"
+    },
+    {
+      "id": "114",
+      "word": "SUGGESTION",
+      "tabooWords": [
+        "IDEA",
+        "ADVICE",
+        "THOUGHT",
+        "PROPOSAL",
+        "PLAN"
+      ],
+      "category": "communication",
+      "difficulty": "medium"
+    },
+    {
+      "id": "115",
+      "word": "ARGUMENT",
+      "tabooWords": [
+        "FIGHT",
+        "DEBATE",
+        "DISAGREE",
+        "WORDS",
+        "DISCUSSION"
+      ],
+      "category": "communication",
+      "difficulty": "medium"
+    },
+    {
+      "id": "116",
+      "word": "PROBLEM",
+      "tabooWords": [
+        "ISSUE",
+        "SOLUTION",
+        "DIFFICULTY",
+        "FIX",
+        "TROUBLE"
+      ],
+      "category": "logic",
+      "difficulty": "medium"
+    },
+    {
+      "id": "117",
+      "word": "JUDGMENT",
+      "tabooWords": [
+        "COURT",
+        "DECISION",
+        "OPINION",
+        "TRIAL",
+        "LAW"
+      ],
+      "category": "law",
+      "difficulty": "hard"
+    },
+    {
+      "id": "118",
+      "word": "KING",
+      "tabooWords": [
+        "QUEEN",
+        "CROWN",
+        "ROYALTY",
+        "THRONE",
+        "RULER"
+      ],
+      "category": "history",
+      "difficulty": "easy"
+    },
+    {
+      "id": "119",
+      "word": "SHOPPING",
+      "tabooWords": [
+        "BUY",
+        "STORE",
+        "MALL",
+        "MONEY",
+        "CART"
+      ],
+      "category": "lifestyle",
+      "difficulty": "easy"
+    },
+    {
+      "id": "120",
+      "word": "ERROR",
+      "tabooWords": [
+        "MISTAKE",
+        "WRONG",
+        "FAULT",
+        "PROBLEM",
+        "BUG"
+      ],
+      "category": "logic",
+      "difficulty": "medium"
+    },
+    {
+      "id": "121",
+      "word": "CANDIDATE",
+      "tabooWords": [
+        "ELECTION",
+        "JOB",
+        "APPLICANT",
+        "POSITION",
+        "INTERVIEW"
+      ],
+      "category": "society",
+      "difficulty": "medium"
+    },
+    {
+      "id": "122",
+      "word": "PRODUCT",
+      "tabooWords": [
+        "ITEM",
+        "SELL",
+        "MAKE",
+        "BRAND",
+        "COMPANY"
+      ],
+      "category": "business",
+      "difficulty": "easy"
+    },
+    {
+      "id": "123",
+      "word": "READING",
+      "tabooWords": [
+        "BOOK",
+        "WORDS",
+        "STORY",
+        "BERKSHIRE",
+        "PAGES"
+      ],
+      "category": "education",
+      "difficulty": "easy"
+    },
+    {
+      "id": "124",
+      "word": "AREA",
+      "tabooWords": [
+        "SPACE",
+        "REGION",
+        "SIZE",
+        "LOCATION",
+        "ZONE"
+      ],
+      "category": "geography",
+      "difficulty": "medium"
+    },
+    {
+      "id": "125",
+      "word": "MIDNIGHT",
+      "tabooWords": [
+        "NIGHT",
+        "CLOCK",
+        "DARK",
+        "TWELVE",
+        "LATE"
+      ],
+      "category": "time",
+      "difficulty": "medium"
+    },
+    {
+      "id": "126",
+      "word": "CONFUSION",
+      "tabooWords": [
+        "UNCLEAR",
+        "MISUNDERSTAND",
+        "MIX-UP",
+        "QUESTION",
+        "PUZZLED"
+      ],
+      "category": "logic",
+      "difficulty": "hard"
+    },
+    {
+      "id": "127",
+      "word": "MOMENT",
+      "tabooWords": [
+        "TIME",
+        "SECOND",
+        "INSTANT",
+        "SHORT",
+        "FLASH"
+      ],
+      "category": "time",
+      "difficulty": "easy"
+    },
+    {
+      "id": "128",
+      "word": "MEASUREMENT",
+      "tabooWords": [
+        "SIZE",
+        "RULER",
+        "UNIT",
+        "LENGTH",
+        "WEIGHT"
+      ],
+      "category": "science",
+      "difficulty": "medium"
+    },
+    {
+      "id": "129",
+      "word": "ATMOSPHERE",
+      "tabooWords": [
+        "AIR",
+        "EARTH",
+        "SKY",
+        "CLOUDS",
+        "PRESSURE"
+      ],
+      "category": "science",
+      "difficulty": "medium"
+    },
+    {
+      "id": "130",
+      "word": "CONTRACT",
+      "tabooWords": [
+        "AGREEMENT",
+        "PAPER",
+        "SIGN",
+        "DEAL",
+        "BUSINESS"
+      ],
+      "category": "law",
+      "difficulty": "medium"
+    },
+    {
+      "id": "131",
+      "word": "APPEARANCE",
+      "tabooWords": [
+        "LOOK",
+        "VISIBLE",
+        "SEEM",
+        "STYLE",
+        "FACE"
+      ],
+      "category": "society",
+      "difficulty": "medium"
+    },
+    {
+      "id": "132",
+      "word": "EFFORT",
+      "tabooWords": [
+        "TRY",
+        "WORK",
+        "HARD",
+        "ACHIEVE",
+        "ATTEMPT"
+      ],
+      "category": "lifestyle",
+      "difficulty": "medium"
+    },
+    {
+      "id": "133",
+      "word": "SAFETY",
+      "tabooWords": [
+        "SECURE",
+        "RISK",
+        "PROTECTION",
+        "SAFE",
+        "GUARD"
+      ],
+      "category": "health",
+      "difficulty": "easy"
+    },
+    {
+      "id": "134",
+      "word": "OWNER",
+      "tabooWords": [
+        "POSSESS",
+        "PROPERTY",
+        "HAVE",
+        "TITLE",
+        "KEEPER"
+      ],
+      "category": "society",
+      "difficulty": "easy"
+    },
+    {
+      "id": "135",
+      "word": "GENE",
+      "tabooWords": [
+        "DNA",
+        "CHROMOSOME",
+        "HEREDITARY",
+        "TRAIT",
+        "BIOLOGY"
+      ],
+      "category": "science",
+      "difficulty": "hard"
+    },
+    {
+      "id": "136",
+      "word": "CONSEQUENCE",
+      "tabooWords": [
+        "RESULT",
+        "OUTCOME",
+        "AFTER",
+        "EFFECT",
+        "REASON"
+      ],
+      "category": "logic",
+      "difficulty": "medium"
+    },
+    {
+      "id": "137",
+      "word": "POPULATION",
+      "tabooWords": [
+        "PEOPLE",
+        "COUNT",
+        "CROWD",
+        "CITY",
+        "HUMAN"
+      ],
+      "category": "geography",
+      "difficulty": "medium"
+    },
+    {
+      "id": "138",
+      "word": "CHAPTER",
+      "tabooWords": [
+        "BOOK",
+        "STORY",
+        "SECTION",
+        "PART",
+        "NOVEL"
+      ],
+      "category": "culture",
+      "difficulty": "easy"
+    },
+    {
+      "id": "139",
+      "word": "RECEPTION",
+      "tabooWords": [
+        "WEDDING",
+        "DESK",
+        "PHONE",
+        "WELCOME",
+        "EVENT"
+      ],
+      "category": "society",
+      "difficulty": "easy"
+    },
+    {
+      "id": "140",
+      "word": "SCIENCE",
+      "tabooWords": [
+        "EXPERIMENT",
+        "STUDY",
+        "BIOLOGY",
+        "CHEMISTRY",
+        "PHYSICS"
+      ],
+      "category": "education",
+      "difficulty": "easy"
+    },
+    {
+      "id": "141",
+      "word": "PERCENTAGE",
+      "tabooWords": [
+        "NUMBER",
+        "FRACTION",
+        "MATH",
+        "RATIO",
+        "TOTAL"
+      ],
+      "category": "education",
+      "difficulty": "medium"
+    },
+    {
+      "id": "142",
+      "word": "PERMISSION",
+      "tabooWords": [
+        "ALLOW",
+        "AUTHORITY",
+        "GRANT",
+        "ACCEPT",
+        "YES"
+      ],
+      "category": "society",
+      "difficulty": "medium"
+    },
+    {
+      "id": "143",
+      "word": "EMPIRE",
+      "tabooWords": [
+        "KING",
+        "CONQUER",
+        "RULE",
+        "DYNASTY",
+        "POWER"
+      ],
+      "category": "history",
+      "difficulty": "hard"
+    },
+    {
+      "id": "144",
+      "word": "STAR",
+      "tabooWords": [
+        "NIGHT",
+        "LIGHT",
+        "SKY",
+        "CONSTELLATION",
+        "TWINKLE"
+      ],
+      "category": "science",
+      "difficulty": "medium"
+    },
+    {
+      "id": "145",
+      "word": "PLANE",
+      "tabooWords": [
+        "FLY",
+        "AIRPORT",
+        "JET",
+        "WINGS",
+        "TRAVEL"
+      ],
+      "category": "transportation",
+      "difficulty": "hard"
+    },
+    {
+      "id": "146",
+      "word": "PYRAMID",
+      "tabooWords": [
+        "EGYPT",
+        "SAND",
+        "PHARAOH",
+        "ANCIENT",
+        "TOMB"
+      ],
+      "category": "history",
+      "difficulty": "medium"
+    },
+    {
+      "id": "147",
+      "word": "PHONE",
+      "tabooWords": [
+        "CALL",
+        "TEXT",
+        "MOBILE",
+        "RING",
+        "SCREEN"
+      ],
+      "category": "technology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "148",
+      "word": "TABLET",
+      "tabooWords": [
+        "SCREEN",
+        "TOUCH",
+        "APP",
+        "GADGET",
+        "BATTERY"
+      ],
+      "category": "technology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "149",
+      "word": "CAKE",
+      "tabooWords": [
+        "BAKE",
+        "SWEET",
+        "CHOCOLATE",
+        "FROSTING",
+        "DESSERT"
+      ],
+      "category": "food",
+      "difficulty": "medium"
+    },
+    {
+      "id": "150",
+      "word": "CRICKET",
+      "tabooWords": [
+        "BAT",
+        "BALL",
+        "WICKET",
+        "TEAM",
+        "PITCH"
+      ],
+      "category": "sports",
+      "difficulty": "medium"
+    },
+    {
+      "id": "151",
+      "word": "DESERT",
+      "tabooWords": [
+        "SAND",
+        "HOT",
+        "DUNE",
+        "CAMEL",
+        "OASIS"
+      ],
+      "category": "geography",
+      "difficulty": "hard"
+    },
+    {
+      "id": "152",
+      "word": "CASTLE",
+      "tabooWords": [
+        "KING",
+        "QUEEN",
+        "MEDIEVAL",
+        "STONE",
+        "TOWER"
+      ],
+      "category": "history",
+      "difficulty": "medium"
+    },
+    {
+      "id": "153",
+      "word": "TRAIN",
+      "tabooWords": [
+        "TRACK",
+        "STATION",
+        "RAILWAY",
+        "ENGINE",
+        "TRANSPORT"
+      ],
+      "category": "transportation",
+      "difficulty": "easy"
+    },
+    {
+      "id": "154",
+      "word": "LAMP",
+      "tabooWords": [
+        "LIGHT",
+        "BULB",
+        "SHADE",
+        "SWITCH",
+        "ROOM"
+      ],
+      "category": "home",
+      "difficulty": "hard"
+    },
+    {
+      "id": "155",
+      "word": "TIGER",
+      "tabooWords": [
+        "STRIPES",
+        "JUNGLE",
+        "CARNIVORE",
+        "ORANGE",
+        "CAT"
+      ],
+      "category": "animals",
+      "difficulty": "medium"
+    },
+    {
+      "id": "156",
+      "word": "TROMBONE",
+      "tabooWords": ["MUSIC", "INSTRUMENT", "BAND", "BRASS", "SLIDE"],
+      "category": "art",
+      "difficulty": "medium"
+    },
+    {
+      "id": "157",
+      "word": "RIVER",
+      "tabooWords": [
+        "WATER",
+        "FLOW",
+        "BANK",
+        "STREAM",
+        "BRIDGE"
+      ],
+      "category": "geography",
+      "difficulty": "medium"
+    },
+    {
+      "id": "158",
+      "word": "BOOK",
+      "tabooWords": [
+        "READ",
+        "PAGES",
+        "STORY",
+        "LIBRARY",
+        "COVER"
+      ],
+      "category": "culture",
+      "difficulty": "easy"
+    },
+    {
+      "id": "159",
+      "word": "ATOM",
+      "tabooWords": [
+        "MOLECULE",
+        "ELECTRON",
+        "PROTON",
+        "NEUTRON",
+        "NUCLEUS"
+      ],
+      "category": "science",
+      "difficulty": "hard"
+    },
+    {
+      "id": "160",
+      "word": "CAR",
+      "tabooWords": [
+        "WHEEL",
+        "DRIVE",
+        "ROAD",
+        "ENGINE",
+        "TRANSPORT"
+      ],
+      "category": "transportation",
+      "difficulty": "easy"
+    },
+    {
+      "id": "161",
+      "word": "PIZZA",
+      "tabooWords": [
+        "CHEESE",
+        "TOMATO",
+        "CRUST",
+        "SLICE",
+        "ITALY"
+      ],
+      "category": "food",
+      "difficulty": "easy"
+    },
+    {
+      "id": "162",
+      "word": "MOVIE",
+      "tabooWords": [
+        "FILM",
+        "SCREEN",
+        "ACTOR",
+        "DIRECTOR",
+        "CINEMA"
+      ],
+      "category": "entertainment",
+      "difficulty": "easy"
+    },
+    {
+      "id": "163",
+      "word": "CAT",
+      "tabooWords": [
+        "FUR",
+        "MEOW",
+        "TAIL",
+        "PET",
+        "WHISKERS"
+      ],
+      "category": "animals",
+      "difficulty": "easy"
+    },
+    {
+      "id": "164",
+      "word": "ELEPHANT",
+      "tabooWords": [
+        "TRUNK",
+        "TUSK",
+        "LARGE",
+        "AFRICA",
+        "ZOO"
+      ],
+      "category": "animals",
+      "difficulty": "easy"
+    },
+    {
+      "id": "165",
+      "word": "SOFA",
+      "tabooWords": [
+        "SEAT",
+        "CUSHION",
+        "LIVING",
+        "ROOM",
+        "COMFORT"
+      ],
+      "category": "home",
+      "difficulty": "medium"
+    },
+    {
+      "id": "166",
+      "word": "MOON",
+      "tabooWords": [
+        "NIGHT",
+        "SKY",
+        "CRATER",
+        "SPACE",
+        "PLANET"
+      ],
+      "category": "science",
+      "difficulty": "medium"
+    },
+    {
+      "id": "167",
+      "word": "BASKETBALL",
+      "tabooWords": [
+        "HOOP",
+        "BALL",
+        "DRIBBLE",
+        "COURT",
+        "TEAM"
+      ],
+      "category": "sports",
+      "difficulty": "easy"
+    },
+    {
+      "id": "168",
+      "word": "MOUNTAIN",
+      "tabooWords": [
+        "PEAK",
+        "CLIMB",
+        "HIGH",
+        "SNOW",
+        "ROCK"
+      ],
+      "category": "geography",
+      "difficulty": "medium"
+    },
+    {
+      "id": "169",
+      "word": "SONG",
+      "tabooWords": [
+        "MUSIC",
+        "LYRICS",
+        "SING",
+        "MELODY",
+        "TUNE"
+      ],
+      "category": "entertainment",
+      "difficulty": "medium"
+    },
+    {
+      "id": "170",
+      "word": "CHAIR",
+      "tabooWords": [
+        "SIT",
+        "LEG",
+        "WOOD",
+        "TABLE",
+        "FURNITURE"
+      ],
+      "category": "home",
+      "difficulty": "medium"
+    },
+    {
+      "id": "172",
+      "word": "CHOCOLATE",
+      "tabooWords": [
+        "SWEET",
+        "BROWN",
+        "CANDY",
+        "BAR",
+        "COCOA"
+      ],
+      "category": "food",
+      "difficulty": "easy"
+    },
+    {
+      "id": "173",
+      "word": "PENGUIN",
+      "tabooWords": ["BIRD", "ANTARCTICA", "ICE", "SWIM", "BLACK"],
+      "category": "nature",
+      "difficulty": "easy"
+    },
+    {
+      "id": "174",
+      "word": "HOT AIR BALLOON",
+      "tabooWords": ["FLY", "AIR", "FLOAT", "BASKET", "SKY"],
+      "category": "culture",
+      "difficulty": "medium"
+    },
+    {
+      "id": "175",
+      "word": "ECLIPSE",
+      "tabooWords": ["SUN", "MOON", "SHADOW", "SOLAR", "LUNAR"],
+      "category": "science",
+      "difficulty": "medium"
+    },
+    {
+      "id": "176",
+      "word": "TROPHY",
+      "tabooWords": ["WIN", "AWARD", "VICTORY", "PRIZE", "CUP"],
+      "category": "games",
+      "difficulty": "easy"
+    },
+    {
+      "id": "177",
+      "word": "HONEYCOMB",
+      "tabooWords": ["BEES", "HEXAGON", "HONEY", "WAX", "COLONY"],
+      "category": "nature",
+      "difficulty": "medium"
+    },
+    {
+      "id": "178",
+      "word": "LADDER",
+      "tabooWords": ["CLIMB", "RUNG", "STEP", "HEIGHT", "TOOL"],
+      "category": "home",
+      "difficulty": "easy"
+    },
+    {
+      "id": "179",
+      "word": "CROSSBOW",
+      "tabooWords": ["WEAPON", "ARROW", "BOLT", "SHOOT", "BOW"],
+      "category": "culture",
+      "difficulty": "medium"
+    },
+    {
+      "id": "180",
+      "word": "COMET",
+      "tabooWords": ["SPACE", "TAIL", "ICE", "ASTRONOMY", "SHOOTING STAR"],
+      "category": "science",
+      "difficulty": "medium"
+    },
+    {
+      "id": "181",
+      "word": "BUBBLE",
+      "tabooWords": ["SOAP", "POP", "AIR", "ROUND", "FLOAT"],
+      "category": "nature",
+      "difficulty": "easy"
+    },
+    {
+      "id": "182",
+      "word": "KILIMANJARO",
+      "tabooWords": ["MOUNTAIN", "AFRICA", "PEAK", "CLIMB", "SNOW"],
+      "category": "nature",
+      "difficulty": "hard"
+    },
+    {
+      "id": "183",
+      "word": "FIRE TRUCK",
+      "tabooWords": ["EMERGENCY", "RED", "WATER", "LADDER", "HOSE"],
+      "category": "technology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "184",
+      "word": "CAROUSEL",
+      "tabooWords": ["RIDE", "CARNIVAL", "HORSE", "SPIN", "FAIR"],
+      "category": "culture",
+      "difficulty": "easy"
+    },
+    {
+      "id": "185",
+      "word": "METEORITE",
+      "tabooWords": ["SPACE", "ROCK", "ASTEROID", "EARTH", "CRATER"],
+      "category": "science",
+      "difficulty": "hard"
+    },
+    {
+      "id": "186",
+      "word": "DOUGHNUT",
+      "tabooWords": ["SWEET", "HOLE", "FRIED", "GLAZE", "RING"],
+      "category": "culture",
+      "difficulty": "easy"
+    },
+    {
+      "id": "187",
+      "word": "BATTERY",
+      "tabooWords": ["ENERGY", "CHARGE", "POWER", "DEVICE", "ELECTRIC"],
+      "category": "technology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "188",
+      "word": "SWORDFISH",
+      "tabooWords": ["FISH", "OCEAN", "LONG", "SHARP", "SWIM"],
+      "category": "nature",
+      "difficulty": "medium"
+    },
+    {
+      "id": "189",
+      "word": "TOURNAMENT",
+      "tabooWords": ["COMPETITION", "GAMES", "MATCH", "PLAYERS", "PRIZE"],
+      "category": "games",
+      "difficulty": "medium"
+    },
+    {
+      "id": "190",
+      "word": "CROW",
+      "tabooWords": ["BIRD", "BLACK", "FEATHERS", "FLY", "CAW"],
+      "category": "nature",
+      "difficulty": "easy"
+    },
+    {
+      "id": "191",
+      "word": "MARBLE",
+      "tabooWords": ["STONE", "ROUND", "TOY", "GAME", "WHITE"],
+      "category": "games",
+      "difficulty": "easy"
+    },
+    {
+      "id": "192",
+      "word": "GRAVITY",
+      "tabooWords": ["FORCE", "PULL", "EARTH", "WEIGHT", "FALL"],
+      "category": "science",
+      "difficulty": "medium"
+    },
+    {
+      "id": "193",
+      "word": "SCARECROW",
+      "tabooWords": ["FIELD", "CROWS", "STUFFED", "FARM", "CLOTHES"],
+      "category": "culture",
+      "difficulty": "medium"
+    },
+    {
+      "id": "194",
+      "word": "DRUM",
+      "tabooWords": ["MUSIC", "BEAT", "INSTRUMENT", "PERCUSSION", "RHYTHM"],
+      "category": "art",
+      "difficulty": "easy"
+    },
+    {
+      "id": "195",
+      "word": "TORCH",
+      "tabooWords": ["LIGHT", "FLAME", "FIRE", "CARRY", "DARK"],
+      "category": "home",
+      "difficulty": "medium"
+    },
+    {
+      "id": "196",
+      "word": "CATAPULT",
+      "tabooWords": ["WEAPON", "LAUNCH", "PROJECTILE", "ROCK", "SIEGE"],
+      "category": "culture",
+      "difficulty": "hard"
+    },
+    {
+      "id": "197",
+      "word": "OCTOPUS",
+      "tabooWords": ["SEA", "ARMS", "EIGHT", "INK", "SWIM"],
+      "category": "nature",
+      "difficulty": "medium"
+    },
+    {
+      "id": "198",
+      "word": "SATELLITE",
+      "tabooWords": ["SPACE", "ORBIT", "COMMUNICATION", "TELESCOPE", "SIGNAL"],
+      "category": "technology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "199",
+      "word": "IGLOO",
+      "tabooWords": ["SNOW", "ICE", "HOUSE", "COLD", "SHELTER"],
+      "category": "culture",
+      "difficulty": "medium"
+    },
+    {
+      "id": "200",
+      "word": "WINDMILL",
+      "tabooWords": ["WIND", "ENERGY", "BLADE", "SPIN", "FARM"],
+      "category": "technology",
+      "difficulty": "medium"
+    }
+  ],
+  "categories": [
+    {
+      "id": "business",
+      "name": "Business",
+      "description": "Words related to business, trade, marketing"
+    },
+    {
+      "id": "communication",
+      "name": "Communication",
+      "description": "Words related to communication and language"
+    },
+    {
+      "id": "education",
+      "name": "Education",
+      "description": "Words related to education"
+    },
+    {
+      "id": "lifestyle",
+      "name": "Lifestyle",
+      "description": "Words related to lifestyles"
+    },
+    {
+      "id": "logic",
+      "name": "Logic",
+      "description": "Words related to logic"
+    },
+    {
+      "id": "law",
+      "name": "Law",
+      "description": "Words related to law"
+    },
+    {
+      "id": "philosophy",
+      "name": "Philosophy",
+      "description": "Words related to philosophy"
+    },
+    {
+      "id": "society",
+      "name": "Society",
+      "description": "Words related to society"
+    },
+    {
+      "id": "technology",
+      "name": "Technology",
+      "description": "Words related to computers, gadgets, and tech concepts"
+    },
+    {
+      "id": "time",
+      "name": "Time",
+      "description": "Words related to time"
+    },
+    {
+      "id": "food",
+      "name": "Food & Drinks",
+      "description": "Culinary terms, dishes, and ingredients"
+    },
+    {
+      "id": "science",
+      "name": "Science",
+      "description": "Scientific concepts, terms, and phenomena"
+    },
+    {
+      "id": "history",
+      "name": "History",
+      "description": "Historical events, figures, and objects"
+    },
+    {
+      "id": "music",
+      "name": "Music",
+      "description": "Musical instruments, genres, and concepts"
+    },
+    {
+      "id": "geography",
+      "name": "Geography",
+      "description": "Natural and man-made locations around the world"
+    },
+    {
+      "id": "mythology",
+      "name": "Mythology",
+      "description": "Myths, legends, and mythical creatures"
+    },
+    {
+      "id": "art",
+      "name": "Art",
+      "description": "Creative forms of expression and design"
+    },
+    {
+      "id": "astronomy",
+      "name": "Astronomy",
+      "description": "Space, planets, and celestial phenomena"
+    },
+    {
+      "id": "culture",
+      "name": "Culture",
+      "description": "Cultural phenomena"
+    },
+    {
+      "id": "fashion",
+      "name": "Fashion",
+      "description": "Things you wear"
+    },
+    {
+      "id": "games",
+      "name": "Games",
+      "description": "Games, both digital and classical"
+    },
+    {
+      "id": "home",
+      "name": "Home",
+      "description": "Things at home"
+    },
+    {
+      "id": "jewelry",
+      "name": "Jewelry",
+      "description": "Gemstones, metals, and adornments"
+    },
+    {
+      "id": "nature",
+      "name": "Nature",
+      "description": "Natural phenomena and ecosystems"
+    },
+    {
+      "id": "sports",
+      "name": "Sports",
+      "description": "Sports and athletic activities"
+    }
+  ],
+  "difficulties": [
+    {
+      "id": "easy",
+      "name": "Easy",
+      "description": "Common words with basic taboo words"
+    },
+    {
+      "id": "medium",
+      "name": "Medium",
+      "description": "More challenging words and specific taboo words"
+    },
+    {
+      "id": "hard",
+      "name": "Hard",
+      "description": "Complex words with highly related taboo words"
+    }
+  ]
+}
+

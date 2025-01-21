@@ -1,0 +1,54 @@
+{
+  "name": "Taboo Online",
+  "short_name": "Taboo",
+  "description": "Play Taboo with friends online",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4F46E5",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "maskable_icon192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable"
+    },
+    {
+      "src": "maskable_icon512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ],
+  "splash_pages": null,
+  "screenshots": [],
+  "orientation": "any",
+  "categories": ["games", "entertainment", "social"],
+  "shortcuts": [
+    {
+      "name": "New Game",
+      "url": "/new",
+      "description": "Start a new game"
+    },
+    {
+      "name": "Join Game",
+      "url": "/join",
+      "description": "Join an existing game"
+    }
+  ]
+}
