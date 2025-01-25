@@ -110,27 +110,20 @@ class GameManager {
       return false;
     }
 
-    console.log('Full game state:', state);
+    console.log('Current game state:', state);
 
     if (state.status !== GAME_STATUS.WAITING) {
       console.error(`Cannot start game: Invalid status ${state.status}`);
       return false;
     }
 
-    // Get accurate team counts and log full team state
-    console.log('Current teams state:', state.teams);
     const team1Players = state.teams.team1.players.length;
     const team2Players = state.teams.team2.players.length;
     
-    console.log('Team player counts:', { 
-      team1Players, 
-      team1Names: state.teams.team1.players,
-      team2Players,
-      team2Names: state.teams.team2.players
-    });
-
+    console.log('Team player counts:', { team1Players, team2Players });
+    
     if (team1Players === 0 || team2Players === 0) {
-      console.error('Cannot start game: Both teams must have players', { team1Players, team2Players });
+      console.error('Cannot start game: Both teams must have players');
       return false;
     }
 
@@ -149,18 +142,23 @@ class GameManager {
       timestamp: Date.now()
     };
 
-    console.log('Broadcasting game start state:', newState);
-    
-    // Broadcast game start to all peers
+    console.log('Broadcasting game start with new state:', newState);
+
+    // First broadcast the explicit game start message
     this.peerConnection.broadcast({
       type: 'gameStart',
       payload: newState
     });
 
-    // Update local state
-    this.stateManager.updateState(newState, false);
+    // Short delay to ensure game start is processed first
+    setTimeout(() => {
+      // Then update the state which will trigger a state update message
+      this.stateManager.updateState(newState, true);
+    }, 100);
+    
     this.startTurnTimer();
     this.notifyGameEvent(GAME_EVENTS.TURN_START, { turn: initialTurn });
+    
     return true;
   }
 

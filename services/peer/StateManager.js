@@ -112,6 +112,9 @@ class StateManager {
     if (!data.type) return;
 
     switch (data.type) {
+      case 'gameStart':
+        this.handleGameStart(data.payload, senderId);
+        break;
       case 'stateRequest':
         this.handleStateRequest(data.payload, senderId);
         break;
@@ -120,9 +123,6 @@ class StateManager {
         break;
       case 'stateUpdate':
         this.handleStateUpdate(data.payload, senderId);
-        break;
-      case 'gameStart':
-        this.handleGameStart(data.payload, senderId);
         break;
     }
   }

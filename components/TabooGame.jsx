@@ -68,13 +68,10 @@ const TabooGame = () => {
   // Initialize peer connection and services
   useEffect(() => {
     let isInitialized = false;
-    let stateListener;
-    let connectionListener;
-    let hostListener;
-    let gameListener;
     let initializeAttempts = 0;
     const maxAttempts = 5;
-    
+
+    // Initialize function
     const initialize = async () => {
       try {
         if (isInitialized) return;
@@ -89,60 +86,6 @@ const TabooGame = () => {
         
         isInitialized = true;
         setConnectionStatus(CONNECTION_STATUS.CONNECTED);
-        
-        // Set up state change listener
-        stateListener = (newState) => {
-          console.log('Received state update:', newState);
-          setGameState(newState);
-        };
-        stateManager.addStateListener(stateListener);
-
-        // Set up connection status listener
-        connectionListener = (event) => {
-          if (event.type === 'status_change') {
-            setConnectionStatus(event.status);
-            
-            // Handle reconnection
-            if (event.status === CONNECTION_STATUS.DISCONNECTED) {
-              setTimeout(() => {
-                if (!isInitialized) {
-                  initialize();
-                }
-              }, 3000);
-            }
-          }
-        };
-        peerConnection.addConnectionListener(connectionListener);
-
-        // Set up host event listener
-        hostListener = (event, data) => {
-          switch (event) {
-            case HOST_EVENTS.HOST_CHANGED:
-              if (data.isLocalHost) {
-                setTemporaryError('You are now the host of this game.');
-              }
-              break;
-            case HOST_EVENTS.HOST_DISCONNECTED:
-              setRecoveryMessage('Previous host disconnected. Electing new host...');
-              break;
-          }
-        };
-        hostManager.addHostEventListener(hostListener);
-
-        // Set up game event listener
-        gameListener = (event, data) => {
-          switch (event) {
-            case GAME_EVENTS.GAME_OVER:
-              setGameState(prev => ({
-                ...prev,
-                status: GAME_STATUS.ENDED,
-                winner: data.winner
-              }));
-              break;
-          }
-        };
-        gameManager.addGameEventListener(gameListener);
-        
       } catch (error) {
         console.error('Initialization error:', error);
         setError(`Failed to initialize game. ${initializeAttempts < maxAttempts ? 'Retrying...' : 'Please refresh the page.'}`);
@@ -158,14 +101,107 @@ const TabooGame = () => {
     // Start initialization
     initialize();
 
-    // Return cleanup function
-    return () => {
-      if (stateListener) stateManager.removeStateListener(stateListener);
-      if (connectionListener) peerConnection.removeConnectionListener(connectionListener);
-      if (hostListener) hostManager.removeHostEventListener(hostListener);
-      if (gameListener) gameManager.removeGameEventListener(gameListener);
+    // Add event listeners
+    const stateListener = (newState) => {
+      console.log('State update received:', {
+        previousStatus: gameState?.status,
+        newStatus: newState?.status,
+        updateType: 'state listener',
+        isPlaying: newState?.status === GAME_STATUS.PLAYING
+      });
+
+      // Ensure we're actually updating the state
+      setGameState(prevState => {
+        if (!prevState || newState.timestamp > prevState.timestamp) {
+          console.log('Applying new state:', newState);
+          return newState;
+        }
+        console.log('Keeping existing state due to timestamp');
+        return prevState;
+      });
+    };
+
+    const messageListener = (message, senderId) => {
+      console.log('Game message received:', { 
+        type: message.type, 
+        senderId,
+        payload: message.payload,
+        currentGameState: gameState?.status
+      });
       
-      // Clean up managers in reverse order
+      // Handle game start message
+      if (message.type === 'gameStart') {
+        console.log('Game start message received, transitioning to game state');
+        setGameState(message.payload);
+        return;
+      }
+
+      // Handle state update message
+      if (message.type === 'stateUpdate' && message.payload?.status === GAME_STATUS.PLAYING) {
+        console.log('State update with game start received');
+        setGameState(message.payload);
+        return;
+      }
+
+      // Handle initial state request/response
+      if (message.type === 'stateRequest' && hostManager.isHost) {
+        const currentState = stateManager.getState();
+        if (currentState) {
+          console.log('Host sending state to:', senderId);
+          peerConnection.sendToPeer(senderId, {
+            type: 'stateResponse',
+            payload: currentState
+          });
+        }
+      }
+    };
+
+    const connectionListener = (event) => {
+      if (event.type === 'status_change') {
+        setConnectionStatus(event.status);
+        if (event.status === CONNECTION_STATUS.DISCONNECTED) {
+          setTimeout(() => {
+            if (!isInitialized) {
+              initialize();
+            }
+          }, 3000);
+        }
+      }
+    };
+
+    const hostListener = (event, data) => {
+      if (event === HOST_EVENTS.HOST_CHANGED && data.isLocalHost) {
+        setTemporaryError('You are now the host of this game.');
+      } else if (event === HOST_EVENTS.HOST_DISCONNECTED) {
+        setRecoveryMessage('Previous host disconnected. Electing new host...');
+      }
+    };
+
+    const gameListener = (event, data) => {
+      if (event === GAME_EVENTS.GAME_OVER) {
+        setGameState(prev => ({
+          ...prev,
+          status: GAME_STATUS.ENDED,
+          winner: data.winner
+        }));
+      }
+    };
+
+    // Add all listeners
+    stateManager.addStateListener(stateListener);
+    peerConnection.addMessageListener(messageListener);
+    peerConnection.addConnectionListener(connectionListener);
+    hostManager.addHostEventListener(hostListener);
+    gameManager.addGameEventListener(gameListener);
+
+    // Cleanup function
+    return () => {
+      stateManager.removeStateListener(stateListener);
+      peerConnection.removeMessageListener(messageListener);
+      peerConnection.removeConnectionListener(connectionListener);
+      hostManager.removeHostEventListener(hostListener);
+      gameManager.removeGameEventListener(gameListener);
+      
       hostManager.cleanup();
       gameManager.cleanup();
       stateManager.cleanup();

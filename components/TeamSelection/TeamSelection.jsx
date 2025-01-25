@@ -7,17 +7,43 @@ import TeamList from './TeamList';
 
 const TeamSelection = ({ teams, onJoinTeam, onStartGame, isHost, roomCode = '', currentPlayerName }) => {
   const canStartGame = () => {
-    return teams.team1.players.length > 0 && 
-           teams.team2.players.length > 0 &&
-           isHost;
+    const hasTeam1Players = teams.team1.players.length > 0;
+    const hasTeam2Players = teams.team2.players.length > 0;
+    console.log('Checking can start game:', {
+      hasTeam1Players,
+      hasTeam2Players,
+      isHost,
+      team1Players: teams.team1.players,
+      team2Players: teams.team2.players
+    });
+    return hasTeam1Players && hasTeam2Players && isHost;
   };
 
   const getStartButtonText = () => {
-    if (!isHost) return "Waiting for host to start...";
+    if (!isHost) {
+      console.log('Non-host waiting for game start');
+      return "Waiting for host to start...";
+    }
     if (teams.team1.players.length === 0 || teams.team2.players.length === 0) {
+      console.log('Missing players in teams');
       return "Need players in both teams to start";
     }
     return "Start Game";
+  };
+
+  const handleStartGame = () => {
+    console.log('Start game button clicked:', {
+      isHost,
+      teams,
+      canStart: canStartGame()
+    });
+    
+    if (!canStartGame()) {
+      console.warn('Start game button clicked but conditions not met');
+      return;
+    }
+    
+    onStartGame();
   };
 
   const handleCopyRoomCode = () => {
@@ -79,7 +105,7 @@ const TeamSelection = ({ teams, onJoinTeam, onStartGame, isHost, roomCode = '', 
           
           <button
             data-testid="start-game-button"
-            onClick={onStartGame}
+            onClick={handleStartGame}
             disabled={!canStartGame()}
             className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 
                      disabled:bg-gray-400 disabled:cursor-not-allowed"
