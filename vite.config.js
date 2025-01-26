@@ -5,7 +5,7 @@ import path from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/Taboo/', // Update this to match your repository name
+  base: '/TabooGame/', // Update this to match your repository name
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './')
