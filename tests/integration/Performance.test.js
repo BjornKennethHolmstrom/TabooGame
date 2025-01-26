@@ -84,3 +84,38 @@ describe('Performance', () => {
     peerConnections.forEach(peer => peer.cleanupGame());
   });
 });
+
+describe('Team Validation Edge Cases', () => {
+  test('handles player switching teams with minimum player requirement', async () => {
+    const { peer1: host, peer2: player1, peer3: player2, peer4: player3 } = await setupPeerConnections();
+    
+    const roomCode = await host.createRoom();
+    await player1.joinRoom(roomCode);
+    await player2.joinRoom(roomCode);
+    await player3.joinRoom(roomCode);
+
+    // Setup initial teams
+    host.stateManager.updateState({
+      teams: {
+        team1: { name: 'Team 1', players: ['Player1', 'Player2'], score: 0 },
+        team2: { name: 'Team 2', players: ['Player3', 'Player4'], score: 0 }
+      }
+    }, true);
+
+    // Start game
+    let gameStarted = host.gameManager.startGame();
+    expect(gameStarted).toBe(true);
+
+    // Try to switch player leaving team with only one player
+    host.stateManager.updateState({
+      teams: {
+        team1: { name: 'Team 1', players: ['Player1'], score: 0 },
+        team2: { name: 'Team 2', players: ['Player2', 'Player3', 'Player4'], score: 0 }
+      }
+    }, true);
+
+    // Attempt to start game should now fail
+    gameStarted = host.gameManager.startGame();
+    expect(gameStarted).toBe(false);
+  });
+});

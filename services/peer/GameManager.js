@@ -122,8 +122,9 @@ class GameManager {
     
     console.log('Team player counts:', { team1Players, team2Players });
     
-    if (team1Players === 0 || team2Players === 0) {
-      console.error('Cannot start game: Both teams must have players');
+    // Updated validation to require at least 2 players per team
+    if (team1Players < 2 || team2Players < 2) {
+      console.error('Cannot start game: Both teams must have at least 2 players');
       return false;
     }
 

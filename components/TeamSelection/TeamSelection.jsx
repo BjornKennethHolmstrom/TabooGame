@@ -7,16 +7,16 @@ import TeamList from './TeamList';
 
 const TeamSelection = ({ teams, onJoinTeam, onStartGame, isHost, roomCode = '', currentPlayerName }) => {
   const canStartGame = () => {
-    const hasTeam1Players = teams.team1.players.length > 0;
-    const hasTeam2Players = teams.team2.players.length > 0;
+    const hasEnoughTeam1Players = teams.team1.players.length >= 2;
+    const hasEnoughTeam2Players = teams.team2.players.length >= 2;
     console.log('Checking can start game:', {
-      hasTeam1Players,
-      hasTeam2Players,
+      hasEnoughTeam1Players,
+      hasEnoughTeam2Players,
       isHost,
       team1Players: teams.team1.players,
       team2Players: teams.team2.players
     });
-    return hasTeam1Players && hasTeam2Players && isHost;
+    return hasEnoughTeam1Players && hasEnoughTeam2Players && isHost;
   };
 
   const getStartButtonText = () => {
@@ -24,9 +24,9 @@ const TeamSelection = ({ teams, onJoinTeam, onStartGame, isHost, roomCode = '', 
       console.log('Non-host waiting for game start');
       return "Waiting for host to start...";
     }
-    if (teams.team1.players.length === 0 || teams.team2.players.length === 0) {
-      console.log('Missing players in teams');
-      return "Need players in both teams to start";
+    if (teams.team1.players.length < 2 || teams.team2.players.length < 2) {
+      console.log('Not enough players in teams');
+      return "Need at least 2 players in each team";
     }
     return "Start Game";
   };

@@ -144,16 +144,18 @@ class PeerConnection {
    * @private
    */
   handleIncomingConnection(connection) {
-    console.log('Incoming connection from:', connection.peer);
+    console.log('[PeerConnection] Handling incoming connection from:', connection.peer);
     
     // Store the connection
     this.connections.set(connection.peer, connection);
 
-    // Set up connection event handlers
+    // Set up immediate message handler
     connection.on('data', (data) => {
+      console.log('[PeerConnection] Got data from connection:', data);
       this.handleIncomingMessage(data, connection.peer);
     });
 
+    // Set up other handlers
     connection.on('close', () => {
       this.connections.delete(connection.peer);
       this.notifyConnectionListeners({
@@ -163,7 +165,7 @@ class PeerConnection {
     });
 
     connection.on('error', (error) => {
-      console.error(`Connection error with peer ${connection.peer}:`, error);
+      console.error(`[PeerConnection] Connection error with peer ${connection.peer}:`, error);
       this.notifyConnectionListeners({
         type: 'peer_error',
         peerId: connection.peer,
@@ -184,11 +186,14 @@ class PeerConnection {
    * @private
    */
   handleIncomingMessage(data, senderId) {
+    console.log('[PeerConnection] Processing incoming message:', { data, senderId });
+    
+    // Notify all message listeners
     this.messageListeners.forEach(listener => {
       try {
         listener(data, senderId);
       } catch (error) {
-        console.error('Error in message listener:', error);
+        console.error('[PeerConnection] Error in message listener:', error);
       }
     });
   }

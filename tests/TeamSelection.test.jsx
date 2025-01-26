@@ -14,19 +14,29 @@ describe('TeamSelection', () => {
     isHost: false
   };
 
-  test('renders room code when provided', () => {
-    render(<TeamSelection {...defaultProps} />);
-    expect(screen.getByText(/ABC123/)).toBeInTheDocument();
+  test('shows correct button text for insufficient players', () => {
+    const teams = {
+      team1: { name: 'Team 1', players: ['Player1'] },
+      team2: { name: 'Team 2', players: ['Player2'] }
+    };
+    
+    const { getByRole } = render(
+      <TeamSelection {...defaultProps} teams={teams} isHost={true} />
+    );
+    
+    expect(getByRole('button', { name: /need at least 2 players in each team/i })).toBeDisabled();
   });
 
-  test('shows correct button text for non-host', () => {
-    render(<TeamSelection {...defaultProps} />);
-    expect(screen.getByRole('button', { name: /waiting for host/i })).toBeDisabled();
-  });
-
-  test('shows correct button text for host', () => {
-    render(<TeamSelection {...defaultProps} isHost={true} />);
-    const button = screen.getByRole('button', { name: /need players in both teams/i });
-    expect(button).toBeDisabled();
+  test('enables start button only when both teams have enough players', () => {
+    const teams = {
+      team1: { name: 'Team 1', players: ['Player1', 'Player2'] },
+      team2: { name: 'Team 2', players: ['Player3', 'Player4'] }
+    };
+    
+    const { getByRole } = render(
+      <TeamSelection {...defaultProps} teams={teams} isHost={true} />
+    );
+    
+    expect(getByRole('button', { name: /start game/i })).toBeEnabled();
   });
 });

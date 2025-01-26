@@ -84,61 +84,36 @@ describe('Network Resilience', () => {
     }
   });
 
-  test('should maintain game state consistency across reconnections', async () => {
-    const { peer1, peer2, peer3 } = await setupPeerConnections();
+  test('maintains team requirements during reconnection', async () => {
+    const { peer1: host, peer2: player1, peer3: player2, peer4: player3 } = await setupPeerConnections();
     
-    // Setup game
-    console.log('Setting up game...');
-    const roomCode = await peer1.createRoom();
-    await peer2.joinRoom(roomCode, 'Player1');
-    await peer3.joinRoom(roomCode, 'Player2');
-    
-    // Wait for initial connections
-    await waitForConnection(peer1, peer2);
-    await waitForConnection(peer1, peer3);
-    
-    // Add players to teams - but this time broadcast from host
-    console.log('Adding players to teams...');
-    peer1.stateManager.updateState({
+    const roomCode = await host.createRoom();
+    await player1.joinRoom(roomCode);
+    await player2.joinRoom(roomCode);
+    await player3.joinRoom(roomCode);
+
+    // Setup teams with sufficient players
+    host.stateManager.updateState({
       teams: {
-        team1: { name: 'Team 1', players: ['Player1'], score: 0 },
-        team2: { name: 'Team 2', players: ['Player2'], score: 0 }
+        team1: { name: 'Team 1', players: ['Player1', 'Player2'], score: 0 },
+        team2: { name: 'Team 2', players: ['Player3', 'Player4'], score: 0 }
       }
     }, true);
 
-    // Wait for state to propagate to all peers
-    await waitForState(peer2, state => 
-      state?.teams?.team1?.players?.includes('Player1') &&
-      state?.teams?.team2?.players?.includes('Player2')
+    // Start game
+    const gameStarted = host.gameManager.startGame();
+    expect(gameStarted).toBe(true);
+
+    // Simulate disconnection and reconnection
+    player1.peer.disconnect();
+    await new Promise(resolve => setTimeout(resolve, 100));
+    player1.peer.reconnect();
+
+    // Verify game state maintained
+    await waitForState(player1, state => 
+      state?.status === 'playing' &&
+      state?.teams?.team1?.players?.length >= 2 &&
+      state?.teams?.team2?.players?.length >= 2
     );
-    
-    // Start game from host and verify
-    console.log('Starting game...');
-    peer1.gameManager.startGame();
-    
-    // Wait for game to start on peer2
-    await waitForState(peer2, state => {
-      console.log('Checking game start state:', state);
-      return state?.status === 'playing';
-    }, 2000);
-    
-    // Get initial state before disconnect
-    const stateBeforeDisconnect = peer2.stateManager.getState();
-    console.log('Initial state before disconnect:', stateBeforeDisconnect);
-    
-    // Test disconnection/reconnection
-    console.log('Testing reconnection...');
-    peer2.peer.disconnect();
-    await new Promise(resolve => setTimeout(resolve, 200));
-    peer2.peer.reconnect();
-    
-    // Verify state is maintained
-    await waitForState(peer2, state => {
-      console.log('Comparing states:', {
-        current: state,
-        expected: stateBeforeDisconnect
-      });
-      return state?.status === 'playing';
-    }, 2000);
   });
 });

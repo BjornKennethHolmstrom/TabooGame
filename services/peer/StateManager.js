@@ -18,11 +18,12 @@ class StateManager {
     this.peerConnection = peerConnection;
     this.gameState = null;
     this.stateVersion = 0;
-    this.pendingUpdates = new Map(); // Track updates that need confirmation
+    this.pendingUpdates = new Map();
     this.stateListeners = new Set();
     this.lastBackupTimestamp = 0;
+    this.MAX_RETRIES = 3;
+    this.RETRY_DELAY = 1000;
     
-    // Set up message listener for state-related messages
     this.peerConnection.addMessageListener(this.handleStateMessage.bind(this));
   }
 
@@ -32,28 +33,34 @@ class StateManager {
    * @param {number} timeout - Maximum time to wait in milliseconds
    * @returns {Promise<Object>} Resolved with state when condition is met
    */
-  async waitForStateCondition(predicate, timeout = 5000) {
-    const startTime = Date.now();
-    const checkInterval = 50; // Check every 50ms
-    
+  waitForStateCondition(predicate, timeout = 5000) {
     return new Promise((resolve, reject) => {
-      const checkState = () => {
-        if (this.gameState && predicate(this.gameState)) {
-          resolve(this.gameState);
-          return;
+      const startTime = Date.now();
+      const checkInterval = 100; // Check every 100ms
+      
+      const check = () => {
+        if (this.gameState) {
+          console.log('[StateManager] Checking state condition:', this.gameState);
+          if (predicate(this.gameState)) {
+            console.log('[StateManager] State condition met');
+            resolve(this.gameState);
+            return;
+          }
         }
 
         if (Date.now() - startTime > timeout) {
-          console.error('Current state:', this.gameState);
+          console.error('[StateManager] State condition timeout:', {
+            currentState: this.gameState,
+            elapsedTime: Date.now() - startTime
+          });
           reject(new Error('Timeout waiting for state condition'));
           return;
         }
 
-        // Check again after interval
-        setTimeout(checkState, checkInterval);
+        setTimeout(check, checkInterval);
       };
 
-      checkState();
+      check();
     });
   }
 
@@ -62,19 +69,13 @@ class StateManager {
    * @param {Object} initialState - Initial game state (if any)
    */
   initialize(initialState = null) {
-    // If we already have a state and no new state is provided, keep current state
-    if (this.gameState && !initialState) {
-      return;
-    }
-
+    console.log('[StateManager] Initializing with state:', initialState);
+    
     if (initialState && this.validateState(initialState)) {
       this.gameState = initialState;
       this.stateVersion = initialState.timestamp || Date.now();
-    } else {
-      this.gameState = this.createInitialState();
+      console.log('[StateManager] State initialized:', this.gameState);
     }
-    
-    // Always broadcast initial state
     this.broadcastState();
     this.notifyListeners();
   }
@@ -107,24 +108,76 @@ class StateManager {
    * @private
    */
   handleStateMessage(data, senderId) {
-    console.log('StateManager received message:', { data, senderId });
+    console.log('[StateManager] Received message:', { type: data.type, senderId });
     
     if (!data.type) return;
 
     switch (data.type) {
-      case 'gameStart':
-        this.handleGameStart(data.payload, senderId);
-        break;
-      case 'stateRequest':
-        this.handleStateRequest(data.payload, senderId);
-        break;
       case 'stateResponse':
-        this.handleStateResponse(data.payload, senderId);
+        console.log('[StateManager] Processing state response from:', senderId);
+        if (this.validateState(data.payload)) {
+          // Always accept state responses if they're valid
+          this.gameState = { ...data.payload };
+          this.stateVersion = data.payload.timestamp;
+          console.log('[StateManager] Applied state from response:', this.gameState);
+          this.notifyListeners();
+        } else {
+          console.warn('[StateManager] Invalid state response rejected:', data.payload);
+        }
         break;
+
+      case 'stateRequest':
+        if (this.gameState) {
+          console.log('[StateManager] Got state request from:', senderId);
+          this.peerConnection.sendToPeer(senderId, {
+            type: 'stateResponse',
+            payload: { ...this.gameState }
+          });
+          console.log('[StateManager] Sent state response to:', senderId);
+        }
+        break;
+
       case 'stateUpdate':
-        this.handleStateUpdate(data.payload, senderId);
+      case 'gameStart':
+        console.log('[StateManager] Processing state update:', data.payload);
+        if (this.validateState(data.payload)) {
+          if (!this.gameState || senderId === this.gameState.host || data.payload.timestamp > this.stateVersion) {
+            this.gameState = { ...data.payload };
+            this.stateVersion = data.payload.timestamp;
+            console.log('[StateManager] Applied state update:', this.gameState);
+            this.notifyListeners();
+          }
+        }
         break;
     }
+  }
+
+  applyState(newState, senderId) {
+    // Only accept updates from host or if we don't have a state yet
+    if (!this.gameState || senderId === this.gameState.host || senderId === this.peerConnection.peerId) {
+      if (!this.gameState || newState.timestamp > this.stateVersion) {
+        const oldState = this.gameState;
+        this.gameState = { ...newState };
+        this.stateVersion = newState.timestamp;
+        
+        console.log('[StateManager] State updated:', {
+          from: oldState?.timestamp,
+          to: newState.timestamp,
+          source: senderId
+        });
+        
+        this.notifyListeners();
+        return true;
+      } else {
+        console.log('[StateManager] Ignored outdated state update:', {
+          current: this.stateVersion,
+          received: newState.timestamp
+        });
+      }
+    } else {
+      console.warn('[StateManager] Rejected state update from non-host:', senderId);
+    }
+    return false;
   }
 
   /**
@@ -202,26 +255,32 @@ class StateManager {
    */
   validateState(state) {
     if (!state) {
-      console.error('Validation failed: state is null or undefined');
+      console.warn('[StateManager] Validation failed: state is null');
       return false;
     }
 
-    console.log('Validating state:', state);
-
     // Check required fields
-    for (const field of ['settings', 'status', 'teams', 'host', 'timestamp']) {
-      if (!(field in state)) {
-        console.error(`Validation failed: missing required field ${field}`);
-        return false;
-      }
+    const requiredFields = ['settings', 'status', 'teams', 'host', 'timestamp'];
+    const missingFields = requiredFields.filter(field => !(field in state));
+    
+    if (missingFields.length > 0) {
+      console.warn('[StateManager] Validation failed: missing fields:', missingFields);
+      return false;
     }
 
     // Validate teams structure
     if (!state.teams?.team1 || !state.teams?.team2) {
-      console.error('Validation failed: invalid teams structure');
+      console.warn('[StateManager] Validation failed: invalid teams structure');
       return false;
     }
 
+    // Validate timestamp
+    if (typeof state.timestamp !== 'number' || state.timestamp <= 0) {
+      console.warn('[StateManager] Validation failed: invalid timestamp');
+      return false;
+    }
+
+    console.log('[StateManager] State validation passed');
     return true;
   }
 
@@ -259,10 +318,14 @@ class StateManager {
    * Broadcast current state to all peers
    */
   broadcastState() {
-    if (!this.gameState) return;
+    if (!this.gameState) {
+      console.log('[StateManager] No state to broadcast');
+      return;
+    }
 
+    console.log('[StateManager] Broadcasting state:', this.gameState);
     this.peerConnection.broadcast({
-      type: MESSAGE_TYPES.STATE_UPDATE,
+      type: 'stateUpdate',
       payload: this.gameState
     });
   }
@@ -271,16 +334,50 @@ class StateManager {
    * Request state from connected peers
    */
   requestState() {
-    console.log('Requesting state from peers');
-    const request = {
-      type: 'stateRequest',
-      payload: {
-        currentVersion: this.stateVersion,
-        requesterId: this.peerConnection.peerId
-      }
-    };
-    console.log('Broadcasting state request:', request);
-    this.peerConnection.broadcast(request);
+    console.log('[StateManager] Starting state request');
+    return new Promise((resolve, reject) => {
+      let retryCount = 0;
+      let timeoutId = null;
+
+      const handleResponse = (data, senderId) => {
+        if (data.type === 'stateResponse' && this.validateState(data.payload)) {
+          clearTimeout(timeoutId);
+          this.peerConnection.removeMessageListener(handleResponse);
+          this.gameState = { ...data.payload };
+          this.stateVersion = data.payload.timestamp;
+          this.notifyListeners();
+          resolve(this.gameState);
+        }
+      };
+
+      const sendRequest = () => {
+        if (retryCount >= this.MAX_RETRIES) {
+          this.peerConnection.removeMessageListener(handleResponse);
+          reject(new Error('Failed to get state after max retries'));
+          return;
+        }
+
+        console.log(`[StateManager] Sending state request (attempt ${retryCount + 1})`);
+        this.peerConnection.addMessageListener(handleResponse);
+        
+        this.peerConnection.broadcast({
+          type: 'stateRequest',
+          payload: {
+            requestId: Date.now().toString(),
+            currentVersion: this.stateVersion,
+            requesterId: this.peerConnection.peerId
+          }
+        });
+
+        retryCount++;
+        timeoutId = setTimeout(() => {
+          console.log(`[StateManager] State request attempt ${retryCount} timed out`);
+          sendRequest();
+        }, this.RETRY_DELAY);
+      };
+
+      sendRequest();
+    });
   }
 
   /**
@@ -307,11 +404,12 @@ class StateManager {
    * @private
    */
   notifyListeners() {
+    console.log('[StateManager] Notifying listeners of state:', this.gameState);
     this.stateListeners.forEach(listener => {
       try {
         listener(this.gameState);
       } catch (error) {
-        console.error('Error in state listener:', error);
+        console.error('[StateManager] Error in state listener:', error);
       }
     });
   }

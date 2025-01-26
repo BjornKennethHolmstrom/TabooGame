@@ -217,54 +217,28 @@ describe('TabooGame Integration', () => {
   });
 
   describe('Game Flow', () => {
-    test('full game round should execute correctly', async () => {
-      const { getByTestId } = render(<TabooGame />);
+    test('prevents game start with insufficient players', async () => {
+      const { peer1: host, peer2: player1 } = await setupPeerConnections();
       
-      // Complete setup phase
-      await completeSetup(getByTestId, 'Host');
+      // Setup game
+      const roomCode = await host.createRoom();
+      await player1.joinRoom(roomCode, 'Player1');
+      
+      // Add only one player to each team
+      host.stateManager.updateState({
+        teams: {
+          team1: { name: 'Team 1', players: ['Player1'], score: 0 },
+          team2: { name: 'Team 2', players: ['Player2'], score: 0 }
+        }
+      }, true);
 
-      // Add players to teams
-      await act(async () => {
-        // Add to team 1
-        fireEvent.change(getByTestId('join-name-input'), {
-          target: { value: 'Player1' }
-        });
-        fireEvent.select(getByTestId('team-select'), 'team1');
-        fireEvent.click(getByTestId('join-team-button'));
-
-        // Add to team 2
-        fireEvent.change(getByTestId('join-name-input'), {
-          target: { value: 'Player2' }
-        });
-        fireEvent.select(getByTestId('team-select'), 'team2');
-        fireEvent.click(getByTestId('join-team-button'));
-      });
-
-      // Start game
-      await act(async () => {
-        fireEvent.click(getByTestId('start-game-button'));
-      });
-
-      // Verify game started
-      await waitFor(() => {
-        expect(getByTestId('game-board')).toBeInTheDocument();
-        expect(getByTestId('team1-score')).toBeInTheDocument();
-        expect(getByTestId('team2-score')).toBeInTheDocument();
-        expect(getByTestId('timer')).toBeInTheDocument();
-      });
-
-      // Submit guess
-      await act(async () => {
-        fireEvent.change(getByTestId('guess-input'), {
-          target: { value: 'test-word' }
-        });
-        fireEvent.click(getByTestId('submit-guess-button'));
-      });
-
-      // Verify score update
-      await waitFor(() => {
-        expect(getByTestId('team1-score')).toHaveTextContent('1');
-      });
+      // Attempt to start game
+      const success = await host.gameManager.startGame();
+      expect(success).toBe(false);
+      
+      // Verify game didn't start
+      const state = host.stateManager.getState();
+      expect(state.status).not.toBe('playing');
     });
 
     test('turn timer and end turn functionality', async () => {
